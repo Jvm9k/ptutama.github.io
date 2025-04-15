@@ -1,0 +1,868 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    max-width: 100%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 16px;
+    color: white;
+}
+.menu {
+    display: flex;
+    gap: 10px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+.menu a:hover {
+    background-color: grey;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.sidebar {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+.sidebar a:hover {
+    background-color: grey;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+header,
+main,
+menu,
+nav {
+    display: block
+}
+
+[hidden] {
+    display: none
+}
+
+a {
+    background-color: transparent
+}
+
+a:active,
+a:hover {
+    outline-width: 0
+}
+
+b {
+    font-weight: bolder
+}
+
+small {
+    font-size: 80%
+}
+
+img {
+    border-style: none
+}
+
+button {
+    font: inherit;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button {
+    text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+[type=checkbox],
+[type=radio] {
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+html {
+    overflow-x: hidden
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2 {
+    font-size: 30px
+}
+
+h3 {
+    font-size: 24px
+}
+
+h4 {
+    font-size: 20px
+}
+
+h5 {
+    font-size: 18px
+}
+
+h6 {
+    font-size: 16px
+}
+
+.serif {
+    font-family: serif
+}
+
+.sans-serif {
+    font-family: sans-serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    margin: 10px 0
+}
+
+.wide {
+    letter-spacing: 4px
+}
+
+img {
+    vertical-align: middle
+}
+
+a {
+    color: inherit
+}
+
+.button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: .3
+}
+
+:disabled * {
+    pointer-events: none
+}
+
+.display-kontainer {
+    position: relative
+}
+
+
+.bar {
+    width: 100%;
+    overflow: hidden
+}
+
+.center .bar {
+    display: inline-block;
+    width: auto
+}
+
+.bar .bar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0
+}
+
+.bar .button {
+    white-space: normal
+}
+
+.block {
+    display: block;
+    width: 100%
+}
+
+.bar:after,
+.bar:before,
+.kontainer:after,
+.kontainer:before,
+.row-padding:after,
+.row-padding:before,
+.row:after,
+.row:before {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.col {
+    float: left;
+    width: 100%
+}
+
+@media (min-width:993px) {
+    .col.l1 {
+        width: 8.33333%
+    }
+    .col.l2 {
+        width: 16.66666%
+    }
+    .col.l3 {
+        width: 24.99999%
+    }
+    .col.l4 {
+        width: 33.33333%
+    }
+    .col.l5 {
+        width: 41.66666%
+    }
+    .col.l6 {
+        width: 49.99999%
+    }
+    .col.l7 {
+        width: 58.33333%
+    }
+    .col.l8 {
+        width: 66.66666%
+    }
+    .col.l9 {
+        width: 74.99999%
+    }
+    .col.l10 {
+        width: 83.33333%
+    }
+    .col.l11 {
+        width: 91.66666%
+    }
+    .col.l12 {
+        width: 99.99999%
+    }
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto
+}
+
+.content {
+    max-width: 980px
+}
+
+.hide {
+    display: none!important
+}
+
+.show,
+.show-block {
+    display: block!important
+}
+
+@media (max-width:600px) {
+    .hide-small {
+        display: none!important
+    }
+}
+
+
+.bottom,
+.top {
+    position: fixed;
+    width: 100%;
+    z-index: 1
+}
+
+.top {
+    top: 0
+}
+
+.bottom {
+    bottom: 0
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2
+}
+
+.ataskiri {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.ataskanan {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.row-padding,
+.row-padding>.col {
+    padding: 0 8px
+}
+
+.kontainer {
+    padding: .01em 16px
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes fading {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.small {
+    font-size: 12px!important
+}
+
+.medium {
+    font-size: 15px!important
+}
+
+.besar {
+    font-size: 18px!important
+}
+
+.xbesar {
+    font-size: 24px!important
+}
+
+.jumbo {
+    font-size: 64px!important
+}
+
+.alignkiri {
+    text-align: left!important
+}
+
+.alignkanan {
+    text-align: right!important
+}
+
+.center {
+    text-align: center!important
+}
+
+.margin {
+    margin: 16px!important
+}
+
+.margin-top {
+    margin-top: 16px!important
+}
+
+.margin-bottom {
+    margin-bottom: 16px!important
+}
+
+.margin-left {
+    margin-left: 16px!important
+}
+
+.margin-right {
+    margin-right: 16px!important
+}
+
+.padding-small {
+    padding: 4px 8px!important
+}
+
+.padding {
+    padding: 8px 16px!important
+}
+
+.padding-besar {
+    padding: 12px 24px!important
+}
+
+.padding-16 {
+    padding-top: 16px!important;
+    padding-bottom: 16px!important
+}
+
+.padding-24 {
+    padding-top: 24px!important;
+    padding-bottom: 24px!important
+}
+
+.padding-32 {
+    padding-top: 32px!important;
+    padding-bottom: 32px!important
+}
+
+.padding-48 {
+    padding-top: 48px!important;
+    padding-bottom: 48px!important
+}
+
+.padding-64 {
+    padding-top: 64px!important;
+    padding-bottom: 64px!important
+}
+
+.padding-top-64 {
+    padding-top: 64px!important
+}
+
+.padding-top-48 {
+    padding-top: 48px!important
+}
+
+.padding-top-32 {
+    padding-top: 32px!important
+}
+
+.padding-top-24 {
+    padding-top: 24px!important
+}
+
+.left {
+    float: left!important
+}
+
+.right {
+    float: right!important
+}
+
+.button:hover {
+    color: #000!important;
+    background-color: #ccc!important
+}
+
+.white {
+    color: #000!important;
+    background-color: #fff!important
+}
+
+.black {
+    color: #fff!important;
+    background-color: #000!important
+}
+
+.grey {
+    color: #000!important;
+    background-color: #9e9e9e!important
+}
+
+.text-white {
+    color: #fff!important
+}
+
+.text-black {
+    color: #000!important
+}
+
+.text-grey {
+    color: #757575!important
+}
+
+.kolominput {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+textarea {
+    resize: vertical; /* Agar textarea bisa diperbesar secara vertikal */
+    min-height: 100px; /* Menentukan tinggi minimum */
+}
+
+
+button.btn {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #0056b3;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.wide {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.kontainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 card per baris */
+    gap: 20px; /* Jarak antar kartu */
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 100%; /* Memastikan kartu memenuhi baris */
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: #777;
+}
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    overflow-x: auto;
+    white-space: normal;
+    table-layout: auto; /* Bisa 'auto' agar kolom menyesuaikan isi */
+    display: table; /* Perbaikan */
+}
+
+
+/* Membuat tabel tetap responsif pada layar kecil */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Styling untuk border tabel */
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Header tabel */
+.table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Warna alternatif pada baris tabel */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+/* Styling untuk gambar dalam tabel */
+.table img {
+    border-radius: 5px;
+}
+
+/* Styling untuk tombol */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    border: 1px solid #e0a800;
+}
+
+.btn-primary {
+    background-color: #0749ff;
+    color: #ffffff;
+    border: 1px solid #0749ff;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: 1px solid #c82333;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    color: #fff;
+}
+
+/* Tambahan untuk tabel responsif pada layar kecil */
+@media (max-width: 768px) {
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+    
+    .table thead {
+        display: none;
+    }
+
+    .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+}
